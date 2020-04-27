@@ -5,6 +5,11 @@
   padding: 2rem;
   background-color: #fff;
   border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-card:not(:last-child) {
+  margin-bottom: 2rem;
 }
 
 .post-header {
@@ -14,8 +19,8 @@
 }
 
 .post-header__img {
-  max-width: 32px;
-  max-height: 32px;
+  max-width: 3.2rem;
+  max-height: 3.2rem;
   border-radius: 50%;
   margin-right: 1rem;
   overflow: hidden;
@@ -41,4 +46,10 @@
 .post-message {
   color: #3e3e3e;
   line-height: 1.6;
+}
+
+.post-comments {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eeeeee;
 }

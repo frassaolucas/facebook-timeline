@@ -2,24 +2,28 @@ import React, { Component } from "react";
 
 import "./styles.css";
 
-function PostCard() {
+import PostComment from "../PostComment";
+
+function PostCard({ post }) {
   return (
     <div className="post-card">
       <div className="post-header">
         <div className="post-header__img">
-          <img src="https://picsum.photos/100/150" />
+          <img src={post.author.avatar} />
         </div>
 
         <div className="post-header__info">
-          <div className="post-user">Júlio Alcantara</div>
-          <div class="post-date">04 Jun 2019</div>
+          <div className="post-user">{post.author.name}</div>
+          <div className="post-date">{post.date}</div>
         </div>
       </div>
 
-      <div className="post-message">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
-        earum culpa quos doloribus sapiente mollitia totam nemo natus facilis
-        saepe optio in, unde id blanditiis ipsa officia at ipsum neque.
+      <div className="post-message">{post.content}</div>
+
+      <div className="post-comments">
+        {post.comments.map((comment) => (
+          <PostComment key={comment.id} comment={comment} />
+        ))}
       </div>
     </div>
   );
